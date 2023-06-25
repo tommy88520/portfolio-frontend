@@ -1,0 +1,50 @@
+.navigation-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  &__show-container {
+    width: 23%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__link {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    border-right: 1px solid #fff;
+  }
+  &__link-detail {
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &__icon {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    img {
+      width: 16px;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__logo {
+    p {
+      min-width: 58px;
+      height: 58px;
+      background: #000000;
+      color: #ffffff;
+      border-radius: 10px;
+      line-height: 58px;
+      text-align: center;
+      font-size: 20px;
+      transition: 0.5s;
+    }
+  }
+}
