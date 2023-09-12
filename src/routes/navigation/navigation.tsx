@@ -1,5 +1,6 @@
 import { Fragment, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import gsap from 'gsap';
 import Github from '~/IMG/github.svg';
 import LinkIn from '~/IMG/LinkedIn - Negative.svg';
 import Instagram from '~/IMG/instagram - Negative.svg';
@@ -22,8 +23,16 @@ const Navigation = () => {
   //   toggleLogOut();
   // };
   const { menuState, getMenu } = menuStore((state) => state);
+  const scrollToTargetDiv = (ref) => {
+    gsap.to(window, {
+      duration: 0.2,
+      scrollTo: { y: '#work', offsetY: 80 },
+    });
+  };
+  // const { getSelect } = selectStore((state) => state);
   useEffect(() => {
     getMenu();
+    // getSelect();
   }, []); //
   const iconLink = [
     {
@@ -55,9 +64,14 @@ const Navigation = () => {
           <div className='navigation-bar__link'>
             {menuState.map((res, index) => {
               return (
-                <Link className='navigation-bar__link-detail' key={index} to={`${res.navigation}`}>
+                <a
+                  className='navigation-bar__link-detail'
+                  key={index}
+                  href={`#${res.navigation}`}
+                  aria-hidden='true'
+                >
                   {res.navigation}
-                </Link>
+                </a>
               );
             })}
           </div>
