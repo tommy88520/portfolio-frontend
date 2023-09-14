@@ -191,7 +191,7 @@ const Introduce = () => {
           </a>
         </div>
       </div>
-      {/* <div className='introduce-section__skills'>
+      <div className='introduce-section__skills'>
         {skills.map((e, index) => {
           return (
             <MagneticButton
@@ -210,7 +210,7 @@ const Introduce = () => {
             </MagneticButton>
           );
         })}
-      </div> */}
+      </div>
     </div>
   );
 };

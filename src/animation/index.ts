@@ -31,7 +31,7 @@ function worksAnimation(gsap, ref) {
       scrollTrigger: {
         trigger: element.querySelector('.home-page'),
         scrub: false,
-        start: 'top -300px',
+        start: 'top -500px',
         end: '50% 50%',
         toggleActions: 'restart none none reverse',
       },
@@ -49,9 +49,9 @@ function worksAnimation(gsap, ref) {
   gsap
     .timeline({
       scrollTrigger: {
-        trigger: element.querySelector('.home-page'),
+        trigger: element.querySelectorAll('.work-container')[1],
         scrub: false,
-        start: 'top -800px',
+        start: 'top 100%',
         end: '60% 50%',
         toggleActions: 'restart none none reverse',
       },
@@ -94,9 +94,9 @@ function worksAnimation(gsap, ref) {
   gsap
     .timeline({
       scrollTrigger: {
-        trigger: element.querySelector('.home-page'),
+        trigger: element.querySelectorAll('.work-container')[2],
         scrub: false,
-        start: 'top -1300px',
+        start: 'top 100%',
         end: '70% bottom',
         toggleActions: 'restart none none reverse',
       },

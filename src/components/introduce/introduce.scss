@@ -5,7 +5,7 @@ $random: random(50);
   display: flex;
   color: #fff;
   max-width: 1440px;
-  height: calc(100vh - 198px);
+  min-height: 100vh;
   padding: 0 50px;
 
   &__text {
@@ -29,6 +29,7 @@ $random: random(50);
   &__skills {
     width: 40%;
     position: relative;
+    min-height: 480px;
   }
 
   &__buttons-desktop {
@@ -52,19 +53,35 @@ $random: random(50);
     background: rgba(242, 247, 251, 0.15);
   }
 
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    &__text {
+      width: 100%;
+    }
+    &__skills {
+      width: 100%;
+      margin-top: 50px;
+    }
+  }
+
   @media (max-width: 576px) {
     padding: 0 15px;
     margin-top: 0;
+
     &__text {
-      width: 100%;
       font-size: 4em;
     }
+
     &__buttons-desktop {
       display: none;
     }
     &__text-detail {
       margin: 20px 0 25px;
     }
+
+    // &__skills {
+
+    // }
   }
 }
 .magnetic-button {
@@ -187,5 +204,68 @@ $random: random(50);
   &:nth-child(8) {
     top: 350px;
     left: 200px;
+  }
+
+  @media (max-width: 1280px) {
+    width: 43px;
+    height: 43px;
+    svg {
+      transform: translateY(10px);
+    }
+    &:nth-child(1) {
+      top: 23px;
+      left: 14%;
+    }
+
+    &:nth-child(2) {
+      top: 130px;
+      left: 17%;
+    }
+
+    &:nth-child(3) {
+      top: 280px;
+      left: 50%;
+    }
+
+    &:nth-child(4) {
+      top: 171px;
+      left: 48%;
+    }
+
+    &:nth-child(5) {
+      top: 5px;
+      left: 45%;
+      width: 70px;
+      height: 70px;
+      svg {
+        transform: translateY(2px);
+      }
+      p {
+        display: none;
+      }
+    }
+
+    &:nth-child(6) {
+      top: 250px;
+      left: 10%;
+      width: 70px;
+      height: 70px;
+      svg {
+        transform: translateY(2px);
+      }
+      p {
+        display: none;
+      }
+    }
+
+    &:nth-child(7) {
+      top: 100px;
+      left: 75%;
+    }
+
+    &:nth-child(8) {
+      top: 250px;
+      left: 75%;
+    }
   }
 }

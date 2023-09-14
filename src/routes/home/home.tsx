@@ -4,6 +4,7 @@ import Introduce from '~/components/introduce/introduce';
 import './home.scss';
 import Work from '~/components/work/work';
 import TouchBox from '~/components/touchBox/touchBox';
+import MobileBar from '~/components/mobileBar/mobileBar';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { GSDevTools } from 'gsap-trial/GSDevTools';
@@ -21,7 +22,7 @@ const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
   // const workOrder = [1, -1, 1];
 
-  const workOrder = [
+  const workOrder: any = [
     {
       orderNumber: 1,
       workImage: FIcon,
@@ -101,7 +102,6 @@ const Home = () => {
   }, []);
   function navShrink() {
     if (workContainer) {
-      // GSDevTools.create();
       const element = ref.current;
       if (!element) return;
       gsap
@@ -109,7 +109,7 @@ const Home = () => {
           scrollTrigger: {
             trigger: element.querySelector('.home-page'),
             scrub: true,
-            start: 'top top',
+            start: 'top -300px',
             end: '35% 50%',
           },
         })
@@ -135,8 +135,8 @@ const Home = () => {
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: element.querySelectorAll('.work-container')[2],
-          start: '-700px -200px',
+          trigger: element.querySelector('.home-page__extra-intro'),
+          start: 'top 100%',
           end: 'bottom 100px',
           scrub: false,
           toggleActions: 'restart none none reverse',
@@ -151,8 +151,8 @@ const Home = () => {
         {
           opacity: 1,
           y: 0,
-          stagger: 0.2,
-          duration: 0.3,
+          stagger: 0.3,
+          // duration: 0.3,
           ease: 'back',
         },
       );
@@ -161,24 +161,26 @@ const Home = () => {
   return (
     <div className='home-page' ref={ref}>
       <Introduce />
-      {/* <section className='home-page__works-container' ref={workContainer} id='work'>
+      <section className='home-page__works-container' ref={workContainer} id='work'>
         <div className='home-page__title'>Selected Works</div>
         {workOrder.map((order, i) => {
           return <Work key={i} order={order} />;
         })}
-      </section> */}
-      {/* <section className='home-page__extra-intro'>
+      </section>
+      <section className='home-page__extra-intro'>
         {extraWork.map((item, index) => {
           return (
             <div className='home-page__intro-item' key={index}>
               <div className='home-page__intro-title'>{item.title}</div>
-              {item.skills.map((skill, Sindex) => {
-                return (
-                  <div className='home-page__intro-detail' key={Sindex}>
-                    {skill}
-                  </div>
-                );
-              })}
+              <div className='home-page__intro-wrap'>
+                {item.skills.map((skill, Sindex) => {
+                  return (
+                    <div className='home-page__intro-detail' key={Sindex}>
+                      {skill}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           );
         })}
@@ -198,7 +200,8 @@ const Home = () => {
           })}
         </div>
       </section>
-      <footer className='home-page__footer'>2023 portfolio - developed by Tommy Huang</footer> */}
+      <footer className='home-page__footer'>2023 portfolio - developed by Tommy Huang</footer>
+      <MobileBar />
     </div>
   );
 };

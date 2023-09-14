@@ -33,13 +33,18 @@
     padding: 6px 0;
   }
 
+  &__intro-wrap {
+    display: flex;
+    // flex-basis: 2;
+  }
+
   &__intro-title {
     font-size: 1.2em;
     width: 20ch;
   }
 
   &__intro-detail {
-    min-width: 100px;
+    // min-width: 100px;
     font-size: 12px;
     padding: 6px;
     color: rgba(8, 8, 9, 0.62);
@@ -112,5 +117,33 @@
     display: flex;
     justify-content: center;
     padding: 12px 0;
+  }
+
+  @media (max-width: 1280px) {
+    &__works-container {
+      padding: 30px 0 0 0;
+    }
+    &__title {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+
+    &__contact-page {
+      display: none;
+    }
+
+    &__intro-title {
+      width: 200px;
+    }
+
+    &__intro-item {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &__intro-title {
+      width: 100px;
+    }
   }
 }

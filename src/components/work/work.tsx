@@ -3,7 +3,7 @@ import './work.scss';
 import Tag from '~/components/tag/tag';
 interface WorkProps {
   order: {
-    orderNumber: number;
+    // orderNumber: number;
     workImage: string;
     introduce: {
       title: string;
@@ -13,7 +13,7 @@ interface WorkProps {
   };
 }
 const Work: React.FC<WorkProps> = ({ order }) => {
-  const { orderNumber, workImage, introduce } = order;
+  const { workImage, introduce } = order;
 
   return (
     <div className='work-container'>
@@ -26,7 +26,7 @@ const Work: React.FC<WorkProps> = ({ order }) => {
           })}
         </div>
       </div>
-      <div className={`work-container__image ${orderNumber == 1 ? 'work-container__asc' : ''}`}>
+      <div className='work-container__image work-container__asc'>
         <img src={workImage} alt='icon' className='work-container__image-detail' />
         <div className='work-container__image-bg' />
       </div>

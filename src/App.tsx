@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navigation from './routes/navigation/navigation';
 // import PrivateRoutes from './utils/authguard';
 import Spinner from './components/spinner/spinner';
-import Hello from './routes/home';
+import Hello from './routes/home/home';
 import TestPage from './routes/testPage';
 function App() {
   return (
