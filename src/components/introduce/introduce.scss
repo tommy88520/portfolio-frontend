@@ -131,17 +131,19 @@ $random: random(50);
 
   &:hover {
     svg {
-      scale: 1;
+      scale: 2;
       transition: all 0.2s;
       transform: translateY(7px);
     }
     p {
-      transform: translateY(-10px);
+      transform: translateY(11px);
       opacity: 1;
       transition: all 0.2s;
-      // font-size: 10px;
+      font-size: 12px;
     }
-    scale: 2;
+    width: 70px;
+    height: 70px;
+    // scale: 2;
     transition: all 0.2s;
   }
 
@@ -167,6 +169,11 @@ $random: random(50);
     width: 100px;
     height: 100px;
     background: linear-gradient(50deg, #ac7a38, rgb(122, 157, 191));
+    &:hover {
+      svg {
+        scale: 1;
+      }
+    }
     svg {
       width: 50px;
       transform: translateY(20px);
@@ -185,6 +192,11 @@ $random: random(50);
     width: 100px;
     height: 100px;
     background: linear-gradient(50deg, #ac7a38, rgb(122, 157, 191));
+    &:hover {
+      svg {
+        scale: 1;
+      }
+    }
     svg {
       width: 50px;
       transform: translateY(20px);

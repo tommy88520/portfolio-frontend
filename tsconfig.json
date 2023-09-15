@@ -25,7 +25,8 @@
     "paths": {
       "~/*": ["src/*"]
     },
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "types": ["vite-plugin-svgr/client"]
   },
   "include": ["vite.config.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

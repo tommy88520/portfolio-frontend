@@ -10,18 +10,6 @@ import { menuStore } from '~/store/index';
 import './navigation.scss';
 
 const Navigation = () => {
-  // const { toggleLogOut, login } = useLoginStore((state) => state);
-  // const { userData } = useUserStore((state) => state);
-  // const linkData = [
-  //   {
-  //     url: 'repo',
-  //     text: 'Repo',
-  //   },
-  // ];
-
-  // const SignOut = () => {
-  //   toggleLogOut();
-  // };
   const { menuState, getMenu } = menuStore((state) => state);
   const scrollToTargetDiv = (ref) => {
     gsap.to(window, {
