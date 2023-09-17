@@ -131,11 +131,7 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
 };
 
 const Introduce = () => {
-  const { t, i18n } = useTranslation();
-  const lngs = {
-    en: { nativeName: 'English' },
-    zhTw: { nativeName: '中文' },
-  };
+  const { t } = useTranslation();
   const { skillsState, getSkills } = skillsStore((state) => state);
   useEffect(() => {
     getSkills();
@@ -196,33 +192,17 @@ const Introduce = () => {
         <p className='introduce-section__text-title'>{t('introduce.title')}</p>
         <p className='introduce-section__text-detail'>{t('introduce.detail')}</p>
         <div className='introduce-section__buttons-desktop'>
-          <Button text={'Work'} onClick={scrollToTargetDiv} ref={targetDivRef} />
-          <div>
-            {Object.keys(lngs).map((lng) => (
-              <button
-                key={lng}
-                style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }}
-                type='submit'
-                onClick={() => i18n.changeLanguage(lng)}
-              >
-                {lngs[lng].nativeName}
-              </button>
-            ))}
-          </div>
-          {/* <p> */}
-          {/* <Trans i18nKey='Welcome to React' /> */}
-          {/* </p> */}
-          {/* <a
+          <Button text={t('introduce.button')} onClick={scrollToTargetDiv} ref={targetDivRef} />
+          <a
             href='https://drive.google.com/file/d/1tZqaupNZGzhWoOMexJPYUWWXP5ajbkIi/view'
             target='_blank'
             rel='noreferrer'
           >
-            <span>Download resume</span>
-            
+            <span>{t('introduce.resume')}</span>
             <div className='introduce-section__buttons-download'>
               <img src={DownloadIcon} alt='download' />
             </div>
-          </a> */}
+          </a>
         </div>
       </div>
       <div className='introduce-section__skills'>

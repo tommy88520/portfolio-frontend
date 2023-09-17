@@ -15,12 +15,14 @@ import Calicon from '~/IMG/cal.svg';
 import linkIcon from '~/IMG/LinkedIn - Negative.svg';
 import EmailIcon from '~/IMG/email.svg';
 import { worksAnimation } from '~/animation/index';
+import { useTranslation } from 'react-i18next';
 
 // gsap.registerPlugin(GSDevTools);
 gsap.registerPlugin(TextPlugin);
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
   // const workOrder = [1, -1, 1];
+  const { t } = useTranslation();
 
   const workOrder: any = [
     {
@@ -162,7 +164,7 @@ const Home = () => {
     <div className='home-page' ref={ref}>
       <Introduce />
       <section className='home-page__works-container' ref={workContainer} id='work'>
-        <div className='home-page__title'>Selected Works</div>
+        <div className='home-page__title'>{t('works.title')}</div>
         {workOrder.map((order, i) => {
           return <Work key={i} order={order} />;
         })}

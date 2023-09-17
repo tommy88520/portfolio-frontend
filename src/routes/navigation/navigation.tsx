@@ -1,6 +1,7 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import gsap from 'gsap';
+import { useTranslation, Trans } from 'react-i18next';
 import Github from '~/IMG/github.svg';
 import LinkIn from '~/IMG/LinkedIn - Negative.svg';
 import Instagram from '~/IMG/instagram - Negative.svg';
@@ -10,18 +11,23 @@ import { menuStore } from '~/store/index';
 import './navigation.scss';
 
 const Navigation = () => {
-  const { menuState, getMenu } = menuStore((state) => state);
-  const scrollToTargetDiv = (ref) => {
-    gsap.to(window, {
-      duration: 0.2,
-      scrollTo: { y: '#work', offsetY: 80 },
-    });
+  // const { menuState, getMenu } = menuStore((state) => state);
+  const { t, i18n, ready } = useTranslation();
+  // if (!ready) return 'loading translations...';
+  const lngs = {
+    en: { nativeName: 'English' },
+    zhTw: { nativeName: '中文' },
   };
-  // const { getSelect } = selectStore((state) => state);
-  useEffect(() => {
-    getMenu();
-    // getSelect();
-  }, []); //
+  const [lang, setLang] = useState(true);
+
+  function changeLang(lng) {
+    setLang(!lng);
+    const newLang = lang ? 'zhTw' : 'en';
+    i18n.changeLanguage(newLang);
+  }
+
+  const menuState: any = t('menu', { returnObjects: true });
+  if (!ready) return 'loading translations...';
   const iconLink = [
     {
       title: 'github',
@@ -51,6 +57,7 @@ const Navigation = () => {
         <div className='navigation-bar__show-container'>
           <div className='navigation-bar__link'>
             {menuState.map((res, index) => {
+              console.log(1, typeof menuState, menuState);
               return (
                 <a
                   className='navigation-bar__link-detail'
@@ -77,6 +84,15 @@ const Navigation = () => {
                 </a>
               );
             })}
+          </div>
+          <div className='navigation-bar__lang'>
+            <p
+              className='navigation-bar__lang-text'
+              onClick={() => changeLang(lang)}
+              aria-hidden='true'
+            >
+              {lang ? '中文' : 'En'}
+            </p>
           </div>
         </div>
       </header>
