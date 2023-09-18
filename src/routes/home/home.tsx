@@ -16,13 +16,19 @@ import linkIcon from '~/IMG/LinkedIn - Negative.svg';
 import EmailIcon from '~/IMG/email.svg';
 import { worksAnimation } from '~/animation/index';
 import { useTranslation } from 'react-i18next';
+import { worksStore } from '~/store/index';
 
 // gsap.registerPlugin(GSDevTools);
 gsap.registerPlugin(TextPlugin);
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
   // const workOrder = [1, -1, 1];
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { worksContent, getWorks } = worksStore((state) => state);
+  useEffect(() => {
+    getWorks(i18n.language);
+  }, []); //
+  // console.log(worksContent);
 
   const workOrder: any = [
     {
@@ -47,7 +53,8 @@ const Home = () => {
     },
     {
       orderNumber: 1,
-      workImage: TIcon,
+      // workImage: TIcon,
+      workImage: worksContent[0].workImage,
       introduce: {
         title: 'Web3',
         detail:
@@ -74,7 +81,6 @@ const Home = () => {
       link: '其他',
     },
   ];
-
   const touchBox = [
     {
       text: 'plan meeting',
@@ -165,7 +171,7 @@ const Home = () => {
       <Introduce />
       <section className='home-page__works-container' ref={workContainer} id='work'>
         <div className='home-page__title'>{t('works.title')}</div>
-        {workOrder.map((order, i) => {
+        {worksContent.map((order, i) => {
           return <Work key={i} order={order} />;
         })}
       </section>

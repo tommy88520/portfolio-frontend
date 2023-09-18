@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { useTranslation, Trans } from 'react-i18next';
-import { skillsStore } from '~/store/index';
+import { worksStore } from '~/store/index';
 
 import { ReactComponent as ReactIcon } from '~/IMG/skills/react.svg';
 import { ReactComponent as dockerIcon } from '~/IMG/skills/docker.svg';
@@ -131,17 +131,12 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
 };
 
 const Introduce = () => {
-  const { t } = useTranslation();
-  const { skillsState, getSkills } = skillsStore((state) => state);
+  const { t, i18n } = useTranslation();
+  const { worksContent, getWorks } = worksStore((state) => state);
   useEffect(() => {
-    getSkills();
+    getWorks(i18n.language);
   }, []); //
 
-  const introduceContent = {
-    title: 'I Build Scalable APIs & Web-Applications',
-    detail:
-      '23 year old (backend leaning) full stack web developer from Deurne, The Netherlands. Most of my current experience is building customer-facing SaaS, websites and transforming business operations.',
-  };
   const targetDivRef = useRef(null);
   const element = document.getElementById('work');
   const scrollToTargetDiv = () => {

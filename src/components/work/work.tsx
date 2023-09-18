@@ -3,26 +3,23 @@ import './work.scss';
 import Tag from '~/components/tag/tag';
 interface WorkProps {
   order: {
-    // orderNumber: number;
+    title: string;
+    content: string;
+    tags: string[];
+    orderNumber: number;
     workImage: string;
-    introduce: {
-      title: string;
-      detail: string;
-      skills: string[];
-    };
   };
 }
 const Work: React.FC<WorkProps> = ({ order }) => {
-  const { workImage, introduce } = order;
-
+  const { title, content, tags, workImage } = order;
   return (
     <div className='work-container'>
       <div className={`work-container__detail `}>
-        <h3 className='work-container__detail-title'>{introduce.title}</h3>
-        <p>{introduce.detail}</p>
+        <h3 className='work-container__detail-title'>{title}</h3>
+        <p>{content}</p>
         <div className='work-container__tag-group'>
-          {introduce.skills.map((e, i) => {
-            return <Tag key={i} tag={e} />;
+          {tags?.map((e: any, i) => {
+            return <Tag key={i} tag={e.tag} />;
           })}
         </div>
       </div>

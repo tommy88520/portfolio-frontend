@@ -6,6 +6,8 @@ import Github from '~/IMG/github.svg';
 import LinkIn from '~/IMG/LinkedIn - Negative.svg';
 import Instagram from '~/IMG/instagram - Negative.svg';
 import { menuStore } from '~/store/index';
+import { worksStore } from '~/store/index';
+
 // import { useLoginStore } from '~/store';
 // import { useUserStore } from '~/store/userStore';
 import './navigation.scss';
@@ -14,6 +16,8 @@ const Navigation = () => {
   // const { menuState, getMenu } = menuStore((state) => state);
   const { t, i18n, ready } = useTranslation();
   // if (!ready) return 'loading translations...';
+  const { getWorks } = worksStore((state) => state);
+
   const lngs = {
     en: { nativeName: 'English' },
     zhTw: { nativeName: '中文' },
@@ -24,6 +28,7 @@ const Navigation = () => {
     setLang(!lng);
     const newLang = lang ? 'zhTw' : 'en';
     i18n.changeLanguage(newLang);
+    getWorks(i18n.language);
   }
 
   const menuState: any = t('menu', { returnObjects: true });
