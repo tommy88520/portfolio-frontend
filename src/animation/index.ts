@@ -73,7 +73,7 @@ function worksAnimation(gsap, ref) {
         trigger: element.querySelector('.home-page'),
         scrub: true,
         start: 'top -1500px',
-        end: '70% bottom',
+        end: '80% bottom',
       },
     })
     .fromTo(
@@ -88,7 +88,7 @@ function worksAnimation(gsap, ref) {
         opacity: 1,
         scale: 1,
         x: -100,
-        y: -80,
+        y: -100,
       },
     );
 

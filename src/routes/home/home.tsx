@@ -25,10 +25,6 @@ const Home = () => {
   // const workOrder = [1, -1, 1];
   const { t, i18n } = useTranslation();
   const { worksContent, getWorks } = worksStore((state) => state);
-  useEffect(() => {
-    getWorks(i18n.language);
-  }, []); //
-  // console.log(worksContent);
 
   const workOrder: any = [
     {
@@ -104,10 +100,13 @@ const Home = () => {
   const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    navShrink();
-    introItems();
-    worksAnimation(gsap, ref);
-  }, []);
+    getWorks(i18n.language);
+    if (worksContent[0].title) {
+      navShrink();
+      worksAnimation(gsap, ref);
+      introItems();
+    }
+  }, [worksContent[0].title]);
   function navShrink() {
     if (workContainer) {
       const element = ref.current;

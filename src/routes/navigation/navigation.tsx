@@ -62,7 +62,6 @@ const Navigation = () => {
         <div className='navigation-bar__show-container'>
           <div className='navigation-bar__link'>
             {menuState.map((res, index) => {
-              console.log(1, typeof menuState, menuState);
               return (
                 <a
                   className='navigation-bar__link-detail'

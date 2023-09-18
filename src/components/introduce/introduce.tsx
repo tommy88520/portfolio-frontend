@@ -108,7 +108,6 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
       duration: speed,
     });
   };
-  // };
 
   return (
     <button
@@ -132,7 +131,7 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
 
 const Introduce = () => {
   const { t, i18n } = useTranslation();
-  const { worksContent, getWorks } = worksStore((state) => state);
+  const { getWorks } = worksStore((state) => state);
   useEffect(() => {
     getWorks(i18n.language);
   }, []); //
