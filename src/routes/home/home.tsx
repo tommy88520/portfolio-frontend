@@ -7,7 +7,6 @@ import TouchBox from '~/components/touchBox/touchBox';
 import MobileBar from '~/components/mobileBar/mobileBar';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
-// import { GSDevTools } from 'gsap-trial/GSDevTools';
 
 import Calicon from '~/IMG/cal.svg';
 import linkIcon from '~/IMG/LinkedIn-Negative.svg';
