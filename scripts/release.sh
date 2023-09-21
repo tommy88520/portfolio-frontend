@@ -9,8 +9,8 @@
 # docker build --build-arg ENV=prod -t asia-east1-docker.pkg.dev/portfolio-js-123/portfolio/portfolio:v1.1 .
 git add .
 git stash save "[yarn release] `date +'%Y-%m-%d %H:%M:%S'`"
-git checkout master
-git pull upstream master
+# git checkout master
+# git pull upstream master
 yarn standard-version
 COMMIT_SHA=$(git rev-parse HEAD)
 IMAGE_TAG=asia-east1-docker.pkg.dev/portfolio-js-123/portfolio/frontend-prod:$COMMIT_SHA
