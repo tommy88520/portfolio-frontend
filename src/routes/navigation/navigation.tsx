@@ -1,11 +1,9 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
-import gsap from 'gsap';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import Github from '~/IMG/github.svg';
-import LinkIn from '~/IMG/LinkedIn - Negative.svg';
-import Instagram from '~/IMG/instagram - Negative.svg';
-import { menuStore } from '~/store/index';
+import LinkIn from '~/IMG/LinkedIn-Negative.svg';
+import Instagram from '~/IMG/Instagram-Negative.svg';
 import { worksStore } from '~/store/index';
 
 // import { useLoginStore } from '~/store';
@@ -15,13 +13,8 @@ import './navigation.scss';
 const Navigation = () => {
   // const { menuState, getMenu } = menuStore((state) => state);
   const { t, i18n, ready } = useTranslation();
-  // if (!ready) return 'loading translations...';
-  const { getWorks } = worksStore((state) => state);
 
-  const lngs = {
-    en: { nativeName: 'English' },
-    zhTw: { nativeName: '中文' },
-  };
+  const { getWorks } = worksStore((state) => state);
   const [lang, setLang] = useState(true);
 
   function changeLang(lng) {
@@ -32,7 +25,7 @@ const Navigation = () => {
   }
 
   const menuState: any = t('menu', { returnObjects: true });
-  if (!ready) return 'loading translations...';
+  if (!ready) return <div>Loading...</div>;
   const iconLink = [
     {
       title: 'github',
@@ -66,7 +59,7 @@ const Navigation = () => {
                 <a
                   className='navigation-bar__link-detail'
                   key={index}
-                  href={`#${res.navigation}`}
+                  href={`#${res.link}`}
                   aria-hidden='true'
                 >
                   {res.navigation}

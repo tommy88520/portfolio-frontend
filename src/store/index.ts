@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { userRequest } from '~/utils/axios';
-import { devtools, persist } from 'zustand/middleware';
+import { devtools } from 'zustand/middleware';
 import { iMenu } from './state/navigate';
 import { iSkillsPage, iWorks } from './state/homePage';
 // const menuStore = create<iMenu[]>()(

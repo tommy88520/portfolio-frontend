@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
+import { useRef, useEffect } from 'react';
 import './test.scss';
 import workout from './workout.svg';
 import greensocklogo from './greensocklogo.svg';

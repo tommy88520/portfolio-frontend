@@ -1,4 +1,3 @@
-import gsap, { Power2 } from 'gsap';
 import './work.scss';
 import Tag from '~/components/tag/tag';
 interface WorkProps {

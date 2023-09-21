@@ -1,4 +1,4 @@
-import gsap, { Power2 } from 'gsap';
+import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 import Introduce from '~/components/introduce/introduce';
 import './home.scss';
@@ -7,12 +7,10 @@ import TouchBox from '~/components/touchBox/touchBox';
 import MobileBar from '~/components/mobileBar/mobileBar';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
-import { GSDevTools } from 'gsap-trial/GSDevTools';
-import FIcon from '~/IMG/works/craft-blue.webp';
-import SIcon from '~/IMG/works/eth2.webp';
-import TIcon from '~/IMG/works/microservice.webp';
+// import { GSDevTools } from 'gsap-trial/GSDevTools';
+
 import Calicon from '~/IMG/cal.svg';
-import linkIcon from '~/IMG/LinkedIn - Negative.svg';
+import linkIcon from '~/IMG/LinkedIn-Negative.svg';
 import EmailIcon from '~/IMG/email.svg';
 import { worksAnimation } from '~/animation/index';
 import { useTranslation } from 'react-i18next';
@@ -22,69 +20,33 @@ import { worksStore } from '~/store/index';
 gsap.registerPlugin(TextPlugin);
 const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
-  // const workOrder = [1, -1, 1];
   const { t, i18n } = useTranslation();
   const { worksContent, getWorks } = worksStore((state) => state);
-
-  const workOrder: any = [
-    {
-      orderNumber: 1,
-      workImage: FIcon,
-      introduce: {
-        title: 'PHP at CRAFT-Education',
-        detail:
-          'In 2 years of flextime work at CRAFT-Education I improved the learning environment for their students and digitalised many of their business processes.',
-        skills: ['java', 'gcp', 'postgresQL'],
-      },
-    },
-    {
-      orderNumber: -1,
-      workImage: SIcon,
-      introduce: {
-        title: 'Scaling microservices on Google Cloud Platform',
-        detail:
-          'A high traffic social media platform built on microservices, using ASP.NET core, Redis, RabbitMQ and Kubernetes.',
-        skills: ['java', 'golang'],
-      },
-    },
-    {
-      orderNumber: 1,
-      // workImage: TIcon,
-      workImage: worksContent[0].workImage,
-      introduce: {
-        title: 'Web3',
-        detail:
-          'I delved into the world of Web3 by developing a variety of projects utilizing smart contracts and token economics.',
-        skills: ['javascript', 'mongoDB', 'nestJs', 'reactJS', 'vueJs', 'typeScript'],
-      },
-    },
-  ];
-
   const extraWork = [
     {
-      title: '經歷',
-      skills: ['資策會', 'PressLogic', '蝙蝠移動'],
+      title: t('extraWork.experience.title'),
+      skills: t('extraWork.experience.content', { returnObjects: true }),
       link: '其他',
     },
     {
-      title: '學歷',
-      skills: ['淡江大學公共行政學士', '政治大學國發所碩士'],
+      title: t('extraWork.education.title'),
+      skills: t('extraWork.education.content', { returnObjects: true }),
       link: '其他',
     },
     {
-      title: '其他',
-      skills: ['萬芳高中小論文比賽助教', '伯大尼孤兒院志工'],
+      title: t('extraWork.others.title'),
+      skills: t('extraWork.others.content', { returnObjects: true }),
       link: '其他',
     },
   ];
   const touchBox = [
     {
-      text: 'plan meeting',
+      text: t('contact.meeting'),
       img: Calicon,
       link: 'https://calendly.com/tommy8852024/booking',
     },
     {
-      text: 'Connect',
+      text: t('contact.connect'),
       img: linkIcon,
       link: 'https://www.linkedin.com/in/tommy8852024/',
     },
@@ -159,7 +121,6 @@ const Home = () => {
           opacity: 1,
           y: 0,
           stagger: 0.3,
-          // duration: 0.3,
           ease: 'back',
         },
       );
@@ -194,7 +155,7 @@ const Home = () => {
       </section>
       <section className='home-page__contact-page'>
         <div className='home-page__touch-text'>
-          <p>Let&rsquo;s Get In Touch</p>
+          <p>{t('contact.title')}</p>
           <div className='home-page__contact-icon'>
             {touchBox.map((e, i) => {
               return <TouchBox key={i} info={e} />;

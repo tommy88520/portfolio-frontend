@@ -1,9 +1,8 @@
-import { Fragment, useEffect } from 'react';
 import './mobileBar.scss';
 import Calicon from '~/IMG/cal.svg';
-import linkIcon from '~/IMG/LinkedIn - Negative.svg';
+import linkIcon from '~/IMG/LinkedIn-Negative.svg';
 import EmailIcon from '~/IMG/email.svg';
-import { menuStore } from '~/store/index';
+// import { menuStore } from '~/store/index';
 
 const MobileBar = () => {
   // const { menuState, getMenu } = menuStore((state) => state);

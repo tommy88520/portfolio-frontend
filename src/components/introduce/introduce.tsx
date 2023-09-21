@@ -1,6 +1,8 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-nocheck
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import { useTranslation, Trans } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { worksStore } from '~/store/index';
 
 import { ReactComponent as ReactIcon } from '~/IMG/skills/react.svg';
@@ -41,7 +43,7 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
     borderRadius = '0px',
     ...props
   } = prop;
-  const $root = useRef<HTMLButtonElement | null>(null);
+  const $root = useRef<HTMLButtonElement>(null);
   const $item = useRef<HTMLDivElement | null>(null);
   const $hover = useRef<HTMLDivElement | null>(null);
   const rootBound = useRef<DOMRect | null>(null);
@@ -56,6 +58,7 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
       background: debug ? 'rgba(0, 125, 255, .4)' : 'transparent',
     });
     // if ($root.current && rootBound.current !== null && $item.current) {
+
     rootBound.current = $root.current.getBoundingClientRect();
     itemBound.current = $item.current.getBoundingClientRect();
     diffBound.current.x = (rootBound.current.width * scale - rootBound.current.width) / 2;
@@ -81,7 +84,9 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
     const y = e.clientY || e.touches[0].clientY;
 
     // if (rootBound.current !== null && itemBound.current !== null) {
+
     const maxX = ((rootBound.current.width - itemBound.current.width) / 2) * tollerance;
+
     const maxY = ((rootBound.current.height - itemBound.current.height) / 2) * tollerance;
 
     const newX = gsap.utils.mapRange(
