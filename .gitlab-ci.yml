@@ -18,7 +18,7 @@ stages:
     - gcloud --version
     - gcloud auth activate-service-account --key-file ./config/key/portfolio-js-123-08cc5e335d93.json
     - gcloud config set project $PROJECT_ID
-    - gcloud config set compute/region asia-east1
+    - gcloud config set compute/region asia-east2
     - gcloud config set disable_prompts true
 
 .create:
