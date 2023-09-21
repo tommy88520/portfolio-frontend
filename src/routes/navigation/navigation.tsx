@@ -1,30 +1,31 @@
-import { Fragment, useEffect } from 'react';
+import { Fragment, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Github from '~/IMG/github.svg';
-import LinkIn from '~/IMG/LinkedIn - Negative.svg';
-import Instagram from '~/IMG/instagram - Negative.svg';
-import { menuStore } from '~/store/index';
+import LinkIn from '~/IMG/LinkedIn-Negative.svg';
+import Instagram from '~/IMG/Instagram-Negative.svg';
+import { worksStore } from '~/store/index';
+
 // import { useLoginStore } from '~/store';
 // import { useUserStore } from '~/store/userStore';
 import './navigation.scss';
 
 const Navigation = () => {
-  // const { toggleLogOut, login } = useLoginStore((state) => state);
-  // const { userData } = useUserStore((state) => state);
-  // const linkData = [
-  //   {
-  //     url: 'repo',
-  //     text: 'Repo',
-  //   },
-  // ];
+  // const { menuState, getMenu } = menuStore((state) => state);
+  const { t, i18n, ready } = useTranslation();
 
-  // const SignOut = () => {
-  //   toggleLogOut();
-  // };
-  const { menuState, getMenu } = menuStore((state) => state);
-  useEffect(() => {
-    getMenu();
-  }, []); //
+  const { getWorks } = worksStore((state) => state);
+  const [lang, setLang] = useState(true);
+
+  function changeLang(lng) {
+    setLang(!lng);
+    const newLang = lang ? 'zhTw' : 'en';
+    i18n.changeLanguage(newLang);
+    getWorks(i18n.language);
+  }
+
+  const menuState: any = t('menu', { returnObjects: true });
+  if (!ready) return <div>Loading...</div>;
   const iconLink = [
     {
       title: 'github',
@@ -55,9 +56,14 @@ const Navigation = () => {
           <div className='navigation-bar__link'>
             {menuState.map((res, index) => {
               return (
-                <Link className='navigation-bar__link-detail' key={index} to={`${res.navigation}`}>
+                <a
+                  className='navigation-bar__link-detail'
+                  key={index}
+                  href={`#${res.link}`}
+                  aria-hidden='true'
+                >
                   {res.navigation}
-                </Link>
+                </a>
               );
             })}
           </div>
@@ -75,6 +81,15 @@ const Navigation = () => {
                 </a>
               );
             })}
+          </div>
+          <div className='navigation-bar__lang'>
+            <p
+              className='navigation-bar__lang-text'
+              onClick={() => changeLang(lang)}
+              aria-hidden='true'
+            >
+              {lang ? '中文' : 'En'}
+            </p>
           </div>
         </div>
       </header>

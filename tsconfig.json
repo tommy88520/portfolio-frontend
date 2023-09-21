@@ -8,6 +8,7 @@
     "esModuleInterop": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
@@ -26,6 +27,7 @@
       "~/*": ["src/*"]
     },
     "noImplicitAny": false,
+    "types": ["vite-plugin-svgr/client"]
   },
   "include": ["vite.config.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

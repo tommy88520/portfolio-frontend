@@ -1,12 +1,45 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Belanosima', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(50deg, #35322e, rgb(51, 35, 61));
+  background: linear-gradient(50deg, #100b14, rgb(51, 35, 61));
   min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+::selection {
+  color: #fff;
+  background: rgb(51, 35, 61);
+}
+
+/* 網頁捲軸【寬度】 */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* 網頁捲軸【背景】顏色 */
+::-webkit-scrollbar-track {
+  background: #666;
+}
+
+/* 網頁捲軸【把手】顏色 */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+/* 網頁捲軸【滑過時】把手的顏色 */
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
 }
