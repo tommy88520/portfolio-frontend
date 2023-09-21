@@ -136,7 +136,7 @@ const Home = () => {
         })}
       </section>
       <section className='home-page__extra-intro'>
-        {extraWork.map((item, index) => {
+        {extraWork.map((item: any, index) => {
           return (
             <div className='home-page__intro-item' key={index}>
               <div className='home-page__intro-title'>{item.title}</div>
