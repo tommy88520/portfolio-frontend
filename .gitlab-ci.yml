@@ -1,7 +1,7 @@
 variables:
-  PROJECT_NAME: portfolio
+  PROJECT_NAME: portfolio-front
   DOCKER_REGISTRY_URL: asia-east1-docker.pkg.dev
-  NIC0_SUBNET: portfolio
+  NIC0_SUBNET: portfolio-front
   PROD_IMAGE_ENDPOINT: $PROJECT_ID/portfolio/frontend-prod
   PREVIOUS_COMMIT: ''
 
