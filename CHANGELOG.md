@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/tommy88520/portfolio-frontend/compare/v0.0.13...v0.0.14) (2023-09-22)
+
+
+### Bug Fixes
+
+* fix extra-item ([991088c](https://github.com/tommy88520/portfolio-frontend/commit/991088cf043d057e00ceb53ff22e783a4e9f4a84))
+* fix git script ([a62bef0](https://github.com/tommy88520/portfolio-frontend/commit/a62bef0db810dcc134e37040f19fe88f3fdfcd9c))
+
 ### [0.0.13](https://github.com/tommy88520/portfolio-frontend/compare/v0.0.12...v0.0.13) (2023-09-21)
 
 ### [0.0.12](https://github.com/tommy88520/portfolio-frontend/compare/v0.0.11...v0.0.12) (2023-09-21)
