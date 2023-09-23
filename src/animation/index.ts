@@ -53,7 +53,7 @@ function worksAnimation(gsap, ref) {
         trigger: element.querySelector('.work-container__uni-img'),
         scrub: true,
         start: 'top 50%',
-        end: 'bottom 20%',
+        end: 'bottom 10%',
       },
     })
     .fromTo(
