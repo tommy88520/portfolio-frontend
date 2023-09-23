@@ -1,5 +1,6 @@
 import './work.scss';
 import Tag from '~/components/tag/tag';
+import CoinImg from '~/IMG/eth 3.png';
 interface WorkProps {
   order: {
     title: string;
@@ -8,9 +9,10 @@ interface WorkProps {
     orderNumber: number;
     workImage: string;
   };
+  number: any;
 }
-const Work: React.FC<WorkProps> = ({ order }) => {
-  const { title, content, tags, workImage } = order;
+const Work: React.FC<WorkProps> = ({ order, number }) => {
+  const { title, content, tags, workImage, orderNumber } = order;
   return (
     <div className='work-container'>
       <div className={`work-container__detail `}>
@@ -23,8 +25,10 @@ const Work: React.FC<WorkProps> = ({ order }) => {
         </div>
       </div>
       <div className='work-container__image work-container__asc'>
-        <img src={workImage} alt='icon' className='work-container__image-detail' />
-        <div className='work-container__image-bg' />
+        {orderNumber == -1 && <img src={CoinImg} alt='icon' className='work-container__uni-img' />}
+        <div className={`work-container__image-bg work-container__image${number}`}>
+          <img src={workImage} alt='icon' className='work-container__image-detail' />
+        </div>
       </div>
     </div>
   );
