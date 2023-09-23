@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/tommy88520/portfolio-frontend/compare/v0.0.14...v0.0.15) (2023-09-23)
+
+
+### Bug Fixes
+
+* adjust par ([74ab2fb](https://github.com/tommy88520/portfolio-frontend/commit/74ab2fbacf8fe76ec197043d25f23a5ebd327c0a))
+
 ### [0.0.14](https://github.com/tommy88520/portfolio-frontend/compare/v0.0.13...v0.0.14) (2023-09-22)
 
 
