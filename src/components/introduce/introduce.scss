@@ -1,13 +1,12 @@
 $skills: rgba(242, 247, 251, 0.5);
 $random: random(50);
 .introduce-section {
-  margin: 100px auto 0;
+  margin: 50px auto 0;
   display: flex;
   color: #fff;
   max-width: 1440px;
-  min-height: 100vh;
-  padding: 0 50px;
-
+  min-height: 90vh;
+  padding: 80px 50px 0;
   &__text {
     width: 60%;
     font-size: 5em;
@@ -52,7 +51,9 @@ $random: random(50);
     transition: 150ms;
     background: rgba(242, 247, 251, 0.15);
   }
-
+  @media (max-width: 1440px) {
+    padding: 0 50px;
+  }
   @media (max-width: 1280px) {
     flex-direction: column;
     &__text {
@@ -67,7 +68,7 @@ $random: random(50);
   @media (max-width: 576px) {
     padding: 0 15px;
     margin-top: 0;
-
+    min-height: 100vh;
     &__text {
       font-size: 4em;
     }
@@ -121,12 +122,13 @@ $random: random(50);
   color: $skills;
   svg {
     width: 20px;
-    transform: translateY(17px);
+    transform: translateY(2px);
     fill: $skills;
   }
   p {
     transform: translateY(-40px);
     opacity: 0;
+    display: none;
   }
 
   &:hover {
@@ -140,6 +142,7 @@ $random: random(50);
       opacity: 1;
       transition: all 0.2s;
       font-size: 12px;
+      display: block;
     }
     width: 70px;
     height: 70px;
@@ -149,29 +152,30 @@ $random: random(50);
 
   &:nth-child(1) {
     top: 50px;
-    left: 50px;
+    left: 80px;
   }
   &:nth-child(2) {
     top: 150px;
-    left: 100px;
+    left: 130px;
   }
   &:nth-child(3) {
     top: 300px;
-    left: 325px;
+    left: 355px;
   }
   &:nth-child(4) {
     top: 200px;
-    left: 220px;
+    left: 250px;
   }
   &:nth-child(5) {
     top: 69px;
-    left: 250px;
+    left: 280px;
     width: 100px;
     height: 100px;
     background: linear-gradient(50deg, #ac7a38, rgb(122, 157, 191));
     &:hover {
       svg {
         scale: 1;
+        transform: translateY(13px);
       }
     }
     svg {
@@ -179,8 +183,10 @@ $random: random(50);
       transform: translateY(20px);
     }
     p {
-      font-size: 20px;
-      transform: translateY(-8px);
+      display: block;
+      font-size: 18px;
+      transform: translateY(11px);
+      margin-top: 5px;
     }
     &:hover {
       scale: 1;
@@ -188,13 +194,14 @@ $random: random(50);
   }
   &:nth-child(6) {
     top: 300px;
-    left: 50px;
+    left: 80px;
     width: 100px;
     height: 100px;
     background: linear-gradient(50deg, #ac7a38, rgb(122, 157, 191));
     &:hover {
       svg {
         scale: 1;
+        transform: translateY(13px);
       }
     }
     svg {
@@ -202,8 +209,10 @@ $random: random(50);
       transform: translateY(20px);
     }
     p {
-      font-size: 20px;
-      transform: translateY(-8px);
+      display: block;
+      font-size: 18px;
+      transform: translateY(11px);
+      margin-top: 5px;
     }
     &:hover {
       scale: 1;
@@ -211,19 +220,17 @@ $random: random(50);
   }
   &:nth-child(7) {
     top: 200px;
-    left: 400px;
+    left: 430px;
   }
   &:nth-child(8) {
     top: 350px;
-    left: 200px;
+    left: 230px;
   }
 
   @media (max-width: 1280px) {
     width: 43px;
     height: 43px;
-    svg {
-      transform: translateY(10px);
-    }
+
     &:nth-child(1) {
       top: 23px;
       left: 14%;
@@ -249,11 +256,19 @@ $random: random(50);
       left: 45%;
       width: 70px;
       height: 70px;
+
       svg {
         transform: translateY(2px);
       }
+
       p {
         display: none;
+      }
+
+      &:hover {
+        svg {
+          transform: translateY(2px);
+        }
       }
     }
 
@@ -262,11 +277,19 @@ $random: random(50);
       left: 10%;
       width: 70px;
       height: 70px;
+
       svg {
         transform: translateY(2px);
       }
+
       p {
         display: none;
+      }
+
+      &:hover {
+        svg {
+          transform: translateY(2px);
+        }
       }
     }
 

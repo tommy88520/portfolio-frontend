@@ -17,7 +17,7 @@ function worksAnimation(gsap, ref) {
         opacity: 0.5,
         scale: 0.8,
         y: 50,
-        rotation: -20,
+        rotation: -40,
       },
       {
         opacity: 1,
@@ -46,6 +46,41 @@ function worksAnimation(gsap, ref) {
         y: 0,
       },
     );
+  // 第二區
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: element.querySelector('.work-container__uni-img'),
+        scrub: true,
+        start: 'top 50%',
+        end: 'bottom 20%',
+      },
+    })
+    .fromTo(
+      element.querySelector('.work-container__uni-img'),
+      {
+        opacity: 0.9,
+        y: -80,
+      },
+      {
+        opacity: 1,
+        y: 0,
+      },
+    )
+    .fromTo(
+      element.querySelectorAll('.work-container__image-detail')[1],
+      {
+        scale: 0.8,
+        opacity: 0.9,
+        x: -70,
+        y: -120,
+      },
+      {
+        opacity: 1,
+        y: 0,
+      },
+      0,
+    );
 
   gsap
     .timeline({
@@ -66,29 +101,28 @@ function worksAnimation(gsap, ref) {
         y: 0,
       },
     );
-
+  //第三區
   gsap
     .timeline({
       scrollTrigger: {
-        trigger: element.querySelector('.home-page'),
+        trigger: element.querySelectorAll('.work-container__image-detail')[2],
         scrub: true,
-        start: 'top -1500px',
-        end: '80% bottom',
+        start: 'top 80%',
+        end: 'top 40%',
       },
     })
     .fromTo(
       element.querySelectorAll('.work-container__image-detail')[2],
       {
-        opacity: 0.5,
-        scale: 0.8,
-        x: -100,
+        opacity: 0.7,
+        x: -50,
         y: 0,
       },
       {
         opacity: 1,
-        scale: 1,
-        x: -100,
+        x: -50,
         y: -100,
+        ease: 'power1.easeInOut', // 添加缓动效果
       },
     );
 

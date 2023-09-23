@@ -131,7 +131,7 @@ const Home = () => {
       <section className='home-page__works-container' ref={workContainer} id='work'>
         <div className='home-page__title'>{t('works.title')}</div>
         {worksContent.map((order, i) => {
-          return <Work key={i} order={order} />;
+          return <Work key={i} order={order} number={i} />;
         })}
       </section>
       <section className='home-page__extra-intro'>
