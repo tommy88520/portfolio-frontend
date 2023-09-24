@@ -1,10 +1,11 @@
+@import './font/font.css';
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  font-family: 'Belanosima', sans-serif;
+  font-family: 'Belanosima', 'Noto SansTC', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(50deg, #161119, rgb(24, 16, 29));
