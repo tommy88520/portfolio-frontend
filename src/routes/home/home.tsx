@@ -5,6 +5,7 @@ import './home.scss';
 import Work from '~/components/work/work';
 import TouchBox from '~/components/touchBox/touchBox';
 import MobileBar from '~/components/mobileBar/mobileBar';
+import BackgroundColor from '~/components/backgroundColor/backgroundColor';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 
@@ -127,7 +128,10 @@ const Home = () => {
 
   return (
     <div className='home-page' ref={ref}>
-      <Introduce />
+      <div className='home-page__introduce-section'>
+        <Introduce />
+        <BackgroundColor bgGradient={bgGradient} />
+      </div>
       <section className='home-page__works-container' ref={workContainer} id='work'>
         <div className='home-page__title'>{t('works.title')}</div>
         {worksContent.map((order, i) => {
@@ -161,11 +165,7 @@ const Home = () => {
             })}
           </div>
         </div>
-        <div className='home-page__contact-gradients' id='contact'>
-          {bgGradient.map((g, hindex) => {
-            return <div className={`home-page__gradients-${g}`} key={hindex} />;
-          })}
-        </div>
+        <BackgroundColor bgGradient={bgGradient} />
       </section>
       <footer className='home-page__footer'>2023 portfolio - developed by Tommy Huang</footer>
       <MobileBar />

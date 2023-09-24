@@ -6,7 +6,7 @@ function worksAnimation(gsap, ref) {
     .timeline({
       scrollTrigger: {
         trigger: element.querySelector('.home-page'),
-        scrub: true,
+        scrub: 1,
         start: 'top -300px',
         end: '50% 50%',
       },
@@ -24,6 +24,7 @@ function worksAnimation(gsap, ref) {
         scale: 1,
         y: 0,
         rotation: 0,
+        ease: 'power1.easeInOut',
       },
     );
 
@@ -51,7 +52,7 @@ function worksAnimation(gsap, ref) {
     .timeline({
       scrollTrigger: {
         trigger: element.querySelector('.work-container__uni-img'),
-        scrub: true,
+        scrub: 1,
         start: 'top 50%',
         end: 'bottom 10%',
       },
@@ -65,6 +66,7 @@ function worksAnimation(gsap, ref) {
       {
         opacity: 1,
         y: 0,
+        ease: 'power1.easeInOut',
       },
     )
     .fromTo(
@@ -78,6 +80,7 @@ function worksAnimation(gsap, ref) {
       {
         opacity: 1,
         y: 0,
+        ease: 'power1.easeInOut',
       },
       0,
     );
@@ -106,7 +109,7 @@ function worksAnimation(gsap, ref) {
     .timeline({
       scrollTrigger: {
         trigger: element.querySelectorAll('.work-container__image-detail')[2],
-        scrub: true,
+        scrub: 1,
         start: 'top 80%',
         end: 'top 40%',
       },
@@ -122,7 +125,7 @@ function worksAnimation(gsap, ref) {
         opacity: 1,
         x: -50,
         y: -100,
-        ease: 'power1.easeInOut', // 添加缓动效果
+        ease: 'power1.easeInOut',
       },
     );
 
