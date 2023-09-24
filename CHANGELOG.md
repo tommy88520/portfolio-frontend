@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.16](https://github.com/tommy88520/portfolio-frontend/compare/v0.0.15...v1.0.16) (2023-09-24)
+
+
+### Bug Fixes
+
+* fix animation and add introduce background ([e9b2506](https://github.com/tommy88520/portfolio-frontend/commit/e9b250605e77aa6311087948189620246f26778c))
+
 ### [0.0.15](https://github.com/tommy88520/portfolio-frontend/compare/v0.0.14...v0.0.15) (2023-09-23)
 
 
