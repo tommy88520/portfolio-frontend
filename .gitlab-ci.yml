@@ -4,9 +4,4 @@ stages:
 check_tag:
   stage: check_tag
   script:
-    - last_commit_tag=$(git describe --tags --abbrev=0)
-    - if [ -n "$last_commit_tag" ]; then
-      echo "Latest commit has been tagged with $last_commit_tag";
-      else
-      echo "Latest commit has not been tagged";
-      fi
+    - echo $CI_COMMIT_TAG
