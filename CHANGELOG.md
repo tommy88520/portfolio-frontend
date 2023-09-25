@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/tommy88520/portfolio-frontend/compare/v1.0.21...v1.1.0) (2023-09-25)
+
+
+### Features
+
+* add work page and adjust introduce section ([fcbdcbd](https://github.com/tommy88520/portfolio-frontend/commit/fcbdcbd3309d094cd026328ee26307c5951a859a))
+
 ### [1.0.21](https://github.com/tommy88520/portfolio-frontend/compare/v1.0.20...v1.0.21) (2023-09-25)
 
 ### [1.0.20](https://github.com/tommy88520/portfolio-frontend/compare/v1.0.19...v1.0.20) (2023-09-25)
