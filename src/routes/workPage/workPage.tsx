@@ -1,8 +1,12 @@
 import { useParams } from 'react-router-dom';
 import './workPage.scss';
+import { useEffect } from 'react';
 
 const WorkPage = () => {
   const { id } = useParams();
+  useEffect(() => {
+    console.log(id);
+  }, []);
   const workData = {
     title: 'BatMobile Backend Developer',
     content: [
