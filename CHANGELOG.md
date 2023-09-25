@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.18](https://github.com/tommy88520/portfolio-frontend/compare/v1.0.16...v1.0.18) (2023-09-25)
+
+
+### Bug Fixes
+
+* fix some nav error and add TC font ([fb1b342](https://github.com/tommy88520/portfolio-frontend/commit/fb1b34299c7ccb30545ac092b8ac95aeef5cfc60))
+
+
+### Chore
+
+* **release:** 1.0.17 ([b5debf6](https://github.com/tommy88520/portfolio-frontend/commit/b5debf636d16a1376bf19d0d86d5d3981eb63880))
+
 ### [1.0.17](https://github.com/tommy88520/portfolio-frontend/compare/v1.0.16...v1.0.17) (2023-09-25)
 
 
