@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/tommy88520/portfolio-frontend/compare/v1.1.0...v1.1.1) (2023-09-25)
+
+
+### Bug Fixes
+
+* fix build error ([579102e](https://github.com/tommy88520/portfolio-frontend/commit/579102e83e106f627074805fc1339c85f655a6cf))
+
 ## [1.1.0](https://github.com/tommy88520/portfolio-frontend/compare/v1.0.21...v1.1.0) (2023-09-25)
 
 
