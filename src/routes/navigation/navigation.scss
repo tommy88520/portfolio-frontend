@@ -15,6 +15,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    min-width: 138px;
   }
   &__link-detail {
     text-decoration: none;
@@ -26,6 +27,7 @@
   }
   &__icon {
     width: 40%;
+    min-width: 93px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -56,6 +58,8 @@
 
   &__lang {
     margin-left: 10px;
+    display: flex;
+    align-items: center;
   }
   &__lang-text {
     min-width: 35px;
@@ -68,6 +72,11 @@
   @media (max-width: 992px) {
     &__show-container {
       width: 30%;
+    }
+  }
+  @media (max-width: 768px) {
+    &__show-container {
+      width: 50%;
     }
   }
   @media (max-width: 576px) {

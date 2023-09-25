@@ -33,7 +33,7 @@ $random: random(50);
 
   &__buttons-desktop {
     display: flex;
-
+    align-items: center;
     a {
       display: flex;
       font-size: 14px;
@@ -304,17 +304,3 @@ $random: random(50);
     }
   }
 }
-
-// {Object.keys(lngs).map((lng) => (
-//   // <button
-//   //   key={lng}
-//   //   style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }}
-//   //   type='submit'
-//   //   onClick={() => i18n.changeLanguage(lng)}
-//   // >
-//   //   {lngs[lng].nativeName}
-//   // </button>
-//   <div className='navigation-bar__lang-text' key={lng}>
-//     {lang ? 'En' : '中文'}
-//   </div>
-// ))}
