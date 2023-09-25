@@ -1,0 +1,23 @@
+.work-page {
+  // color: #fff;
+  &__title {
+    font-size: 4em;
+    max-width: 30ch;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 0 90px;
+  }
+
+  &__content {
+    // width: 70%;
+    background-color: #f2f7fb;
+    border-radius: 20px 20px 0 0;
+    padding: 90px 0 0;
+  }
+
+  &__detail-wrap {
+    width: 70%;
+
+    margin: 0 auto;
+  }
+}

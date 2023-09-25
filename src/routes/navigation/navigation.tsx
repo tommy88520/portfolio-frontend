@@ -1,10 +1,11 @@
-import { Fragment, useState } from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Fragment, useEffect, useState } from 'react';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Github from '~/IMG/github.svg';
 import LinkIn from '~/IMG/LinkedIn-Negative.svg';
 import Instagram from '~/IMG/Instagram-Negative.svg';
 import { worksStore } from '~/store/index';
+import { ReactComponent as LeftArrow } from '~/IMG/left-arrow.svg';
 
 // import { useLoginStore } from '~/store';
 // import { useUserStore } from '~/store/userStore';
@@ -12,20 +13,28 @@ import './navigation.scss';
 
 const Navigation = () => {
   // const { menuState, getMenu } = menuStore((state) => state);
-  const { t, i18n, ready } = useTranslation();
-
+  const { t, i18n } = useTranslation();
+  const location = useLocation();
   const { getWorks } = worksStore((state) => state);
   const [lang, setLang] = useState(true);
+  const [navigationStyle, setNavigationStyle] = useState(true);
+  useEffect(() => {
+    renderNavigation();
+  }, []);
 
-  function changeLang(lng) {
+  const renderNavigation = () => {
+    if (location.pathname !== '/') {
+      setNavigationStyle(false);
+    }
+  };
+
+  const changeLang = (lng) => {
     setLang(!lng);
     const newLang = lang ? 'zhTw' : 'en';
     i18n.changeLanguage(newLang);
     getWorks(i18n.language);
-  }
-
+  };
   const menuState: any = t('menu', { returnObjects: true });
-  if (!ready) return <div>Loading...</div>;
   const iconLink = [
     {
       title: 'github',
@@ -53,7 +62,7 @@ const Navigation = () => {
           </Link>
         </div>
         <div className='navigation-bar__show-container'>
-          <div className='navigation-bar__link'>
+          <div className={`navigation-bar__link ${navigationStyle == false ? 'hide-link' : ''}`}>
             {menuState.map((res, index) => {
               return (
                 <a
@@ -67,7 +76,7 @@ const Navigation = () => {
               );
             })}
           </div>
-          <div className='navigation-bar__icon'>
+          <div className={`navigation-bar__icon ${navigationStyle == false ? 'hide-link' : ''}`}>
             {iconLink.map((res, index) => {
               return (
                 <a
@@ -90,6 +99,15 @@ const Navigation = () => {
             >
               {lang ? '中文' : 'En'}
             </p>
+          </div>
+          <div
+            className={`navigation-bar__back-button ${
+              navigationStyle != false ? 'hide-link' : ''
+            } `}
+            onClick={() => window.history.back()}
+            aria-hidden='true'
+          >
+            <LeftArrow className='navigation-bar__left-arrow' />
           </div>
         </div>
       </header>
