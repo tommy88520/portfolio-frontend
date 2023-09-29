@@ -4,11 +4,9 @@ import { useTranslation } from 'react-i18next';
 import Github from '~/IMG/github.svg';
 import LinkIn from '~/IMG/LinkedIn-Negative.svg';
 import Instagram from '~/IMG/Instagram-Negative.svg';
-import { worksStore } from '~/store/index';
-import { ReactComponent as LeftArrow } from '~/IMG/left-arrow.svg';
+import { worksStore, rootUrlStore } from '~/store/index';
+import BackButton from '~/components/backButton/backButton';
 
-// import { useLoginStore } from '~/store';
-// import { useUserStore } from '~/store/userStore';
 import './navigation.scss';
 
 const Navigation = () => {
@@ -16,22 +14,28 @@ const Navigation = () => {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const { getWorks } = worksStore((state) => state);
+  const { rootUrlState, toggleRootUrl } = rootUrlStore((state) => state);
   const [lang, setLang] = useState(true);
-  const [navigationStyle, setNavigationStyle] = useState(true);
+  // const [navigationStyle, setNavigationStyle] = useState(true);
   useEffect(() => {
     renderNavigation();
-  }, []);
+    // setLangLocal();
+  }, [location.pathname]);
 
   const renderNavigation = () => {
     if (location.pathname !== '/') {
-      setNavigationStyle(false);
+      toggleRootUrl(false);
+    } else {
+      toggleRootUrl(true);
     }
   };
 
   const changeLang = (lng) => {
-    setLang(!lng);
-    const newLang = lang ? 'zhTw' : 'en';
-    i18n.changeLanguage(newLang);
+    if (i18n.language == 'zhTw') {
+      i18n.changeLanguage('en');
+    } else {
+      i18n.changeLanguage('zhTw');
+    }
     getWorks(i18n.language);
   };
   const menuState: any = t('menu', { returnObjects: true });
@@ -62,7 +66,7 @@ const Navigation = () => {
           </Link>
         </div>
         <div className='navigation-bar__show-container'>
-          <div className={`navigation-bar__link ${navigationStyle == false ? 'hide-link' : ''}`}>
+          <div className={`navigation-bar__link ${rootUrlState == false ? 'hide-link' : ''}`}>
             {menuState.map((res, index) => {
               return (
                 <a
@@ -76,7 +80,7 @@ const Navigation = () => {
               );
             })}
           </div>
-          <div className={`navigation-bar__icon ${navigationStyle == false ? 'hide-link' : ''}`}>
+          <div className={`navigation-bar__icon ${rootUrlState == false ? 'hide-link' : ''}`}>
             {iconLink.map((res, index) => {
               return (
                 <a
@@ -97,18 +101,17 @@ const Navigation = () => {
               onClick={() => changeLang(lang)}
               aria-hidden='true'
             >
-              {lang ? '中文' : 'En'}
+              {i18n.language !== 'zhTw' ? '中文' : 'En'}
             </p>
           </div>
-          <div
-            className={`navigation-bar__back-button ${
-              navigationStyle != false ? 'hide-link' : ''
-            } `}
+          {/* <div
+            className={`navigation-bar__back-button ${rootUrlState != false ? 'hide-link' : ''} `}
             onClick={() => window.history.back()}
             aria-hidden='true'
           >
             <LeftArrow className='navigation-bar__left-arrow' />
-          </div>
+          </div> */}
+          <BackButton rootUrlState={rootUrlState} />
         </div>
       </header>
       <Outlet />

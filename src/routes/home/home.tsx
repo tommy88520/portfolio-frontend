@@ -15,7 +15,6 @@ import EmailIcon from '~/IMG/email.svg';
 import { worksAnimation } from '~/animation/index';
 import { useTranslation } from 'react-i18next';
 import { worksStore } from '~/store/index';
-
 // gsap.registerPlugin(GSDevTools);
 gsap.registerPlugin(TextPlugin);
 const Home = () => {
@@ -167,7 +166,6 @@ const Home = () => {
         </div>
         <BackgroundColor bgGradient={bgGradient} />
       </section>
-      <footer className='home-page__footer'>2023 portfolio - developed by Tommy Huang</footer>
       <MobileBar />
     </div>
   );

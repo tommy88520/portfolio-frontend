@@ -2,7 +2,9 @@ import { create } from 'zustand';
 import { userRequest } from '~/utils/axios';
 import { devtools } from 'zustand/middleware';
 import { iMenu } from './state/navigate';
-import { iSkillsPage, iWorks } from './state/homePage';
+import { iWorkPage } from './state/workPage';
+import { iSkillsPage, iWorks, irootUrl } from './state/homePage';
+
 // const menuStore = create<iMenu[]>()(
 //   devtools(
 //     persist((set) => ({
@@ -71,7 +73,6 @@ const skillsStore = create<iSkillsPage>()(
       await userRequest
         .get('portfolio/get-skills')
         .then((res) => {
-          console.log(res.data);
           set(() => ({ skillsState: res.data }));
         })
         .catch((error) => {
@@ -81,4 +82,38 @@ const skillsStore = create<iSkillsPage>()(
   })),
 );
 
-export { menuStore, skillsStore, worksStore };
+const workPageStore = create<iWorkPage>()(
+  devtools((set) => ({
+    workPageContent: {
+      title: '',
+      workDetail: [
+        {
+          title: '',
+          content: '',
+          workDetailImages: [{ image: '' }],
+        },
+      ],
+    },
+    getWorkPageContent: async (e) => {
+      await userRequest
+        .post('portfolio/get-work-page', e)
+        .then((res) => {
+          set(() => ({ workPageContent: res.data }));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+  })),
+);
+
+const rootUrlStore = create<irootUrl>()(
+  devtools((set) => ({
+    rootUrlState: true,
+    toggleRootUrl: (query) => {
+      set(() => ({ rootUrlState: query }));
+    },
+  })),
+);
+
+export { menuStore, skillsStore, worksStore, rootUrlStore, workPageStore };

@@ -15,3 +15,8 @@ export interface iWorks {
 
   getWorks: (e) => void;
 }
+
+export interface irootUrl {
+  rootUrlState: boolean;
+  toggleRootUrl: (e) => void;
+}

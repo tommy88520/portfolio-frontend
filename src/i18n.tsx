@@ -11,7 +11,7 @@ i18n
   .init({
     debug: true,
     fallbackLng: 'en',
-    lng: 'en', // 设置当前语言为英语
+    // lng: 'en', // 设置当前语言为英语
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
