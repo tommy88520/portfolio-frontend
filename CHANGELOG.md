@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/tommy88520/portfolio-frontend/compare/v1.1.1...v1.2.0) (2023-10-01)
+
+
+### Features
+
+* add lazy-load and not found page and revise footer and navbar ([756b1bd](https://github.com/tommy88520/portfolio-frontend/commit/756b1bd5475696bb697e64dab3ff0da4508d85e7))
+
+
+### Chore
+
+* add lazy load setting and revise footer and navbar in the work page ([e069a84](https://github.com/tommy88520/portfolio-frontend/commit/e069a84c36552826ab136c49a9f4ec7ace769642))
+
 ### [1.1.1](https://github.com/tommy88520/portfolio-frontend/compare/v1.1.0...v1.1.1) (2023-09-25)
 
 
