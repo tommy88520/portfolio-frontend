@@ -38,7 +38,7 @@ const Footer = () => {
     <footer className='footer-page'>
       <div className='footer-page__wrap'>
         <div className='footer-page__button-wrap'>
-          <BackButton rootUrlState={rootUrlState} />
+          <BackButton rootUrlState={rootUrlState} top={false} />
         </div>
 
         <div className='footer-page__box-wrap'>

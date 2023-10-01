@@ -1,6 +1,5 @@
 function worksAnimation(gsap, ref) {
   const element = ref.current;
-  console.log(111);
   if (!element) return;
   gsap
     .timeline({

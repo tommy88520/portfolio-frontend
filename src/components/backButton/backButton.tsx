@@ -1,9 +1,9 @@
 import { ReactComponent as LeftArrow } from '~/IMG/left-arrow.svg';
 import './backButton.scss';
-const BackButton = ({ rootUrlState }) => {
+const BackButton = ({ rootUrlState, top }) => {
   return (
     <div
-      className={`back-button ${rootUrlState != false ? 'hide-link' : ''} `}
+      className={`back-button ${rootUrlState != false ? 'hide-link' : ''} ${!top ? 'hidden' : ''}`}
       onClick={() => window.history.back()}
       aria-hidden='true'
     >

@@ -47,4 +47,10 @@
     width: 30%;
     display: flex;
   }
+
+  @media (max-width: 768px) {
+    &__touch-box {
+      width: 90%;
+    }
+  }
 }

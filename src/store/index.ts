@@ -4,6 +4,7 @@ import { devtools } from 'zustand/middleware';
 import { iMenu } from './state/navigate';
 import { iWorkPage } from './state/workPage';
 import { iSkillsPage, iWorks, irootUrl } from './state/homePage';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 // const menuStore = create<iMenu[]>()(
 //   devtools(
@@ -25,7 +26,6 @@ const menuStore = create<iMenu>()(
       await userRequest
         .get('portfolio/get-menu')
         .then((res) => {
-          // console.log(res);
           set(() => ({ menuState: res.data }));
         })
         .catch((error) => {
@@ -39,6 +39,7 @@ const worksStore = create<iWorks>()(
   devtools((set) => ({
     worksContent: [
       {
+        articleId: '',
         title: '',
         content: '',
         tags: [''],
@@ -51,11 +52,15 @@ const worksStore = create<iWorks>()(
       await userRequest
         .post('portfolio/get-work', { lang: lang })
         .then((res) => {
-          console.log(res);
           set(() => ({ worksContent: res.data }));
         })
         .catch((error) => {
           console.log(error);
+          if (error.response.status == 401) {
+            Swal.fire('未登入或是登入時效已到期，請重新登入');
+          } else {
+            location.href = '/notFound';
+          }
         });
     },
   })),
@@ -102,6 +107,11 @@ const workPageStore = create<iWorkPage>()(
         })
         .catch((error) => {
           console.log(error);
+          if (error.response.status == 401) {
+            Swal.fire('未登入或是登入時效已到期，請重新登入');
+          } else {
+            location.href = '/notFound';
+          }
         });
     },
   })),

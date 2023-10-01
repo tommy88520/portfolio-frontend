@@ -15,3 +15,8 @@
     stroke: rgba(242, 247, 251, 0.85);
   }
 }
+@media (max-width: 768px) {
+  .hidden {
+    display: none;
+  }
+}

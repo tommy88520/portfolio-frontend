@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Github from '~/IMG/github.svg';
@@ -15,11 +15,9 @@ const Navigation = () => {
   const location = useLocation();
   const { getWorks } = worksStore((state) => state);
   const { rootUrlState, toggleRootUrl } = rootUrlStore((state) => state);
-  const [lang, setLang] = useState(true);
-  // const [navigationStyle, setNavigationStyle] = useState(true);
   useEffect(() => {
     renderNavigation();
-    // setLangLocal();
+    getWorks(i18n.language);
   }, [location.pathname]);
 
   const renderNavigation = () => {
@@ -30,13 +28,13 @@ const Navigation = () => {
     }
   };
 
-  const changeLang = (lng) => {
+  const changeLang = () => {
     if (i18n.language == 'zhTw') {
       i18n.changeLanguage('en');
     } else {
       i18n.changeLanguage('zhTw');
     }
-    getWorks(i18n.language);
+    // getWorks(i18n.language);
   };
   const menuState: any = t('menu', { returnObjects: true });
   const iconLink = [
@@ -70,7 +68,9 @@ const Navigation = () => {
             {menuState.map((res, index) => {
               return (
                 <a
-                  className='navigation-bar__link-detail'
+                  className={`navigation-bar__link-detail ${
+                    i18n.language == 'zhTw' && 'navigation-bar__link-margin'
+                  }`}
                   key={index}
                   href={`#${res.link}`}
                   aria-hidden='true'
@@ -98,20 +98,13 @@ const Navigation = () => {
           <div className='navigation-bar__lang'>
             <p
               className='navigation-bar__lang-text'
-              onClick={() => changeLang(lang)}
+              onClick={() => changeLang()}
               aria-hidden='true'
             >
               {i18n.language !== 'zhTw' ? '中文' : 'En'}
             </p>
           </div>
-          {/* <div
-            className={`navigation-bar__back-button ${rootUrlState != false ? 'hide-link' : ''} `}
-            onClick={() => window.history.back()}
-            aria-hidden='true'
-          >
-            <LeftArrow className='navigation-bar__left-arrow' />
-          </div> */}
-          <BackButton rootUrlState={rootUrlState} />
+          <BackButton rootUrlState={rootUrlState} top={true} />
         </div>
       </header>
       <Outlet />

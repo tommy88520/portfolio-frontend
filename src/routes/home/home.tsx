@@ -1,5 +1,5 @@
-import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import Introduce from '~/components/introduce/introduce';
 import './home.scss';
 import Work from '~/components/work/work';
@@ -67,7 +67,7 @@ const Home = () => {
       worksAnimation(gsap, ref);
       introItems();
     }
-  }, [worksContent[0].title]);
+  }, [worksContent[0].title, i18n.language]);
   function navShrink() {
     if (workContainer) {
       const element = ref.current;
