@@ -13,7 +13,7 @@ const Footer = () => {
   const { rootUrlState } = rootUrlStore((state) => state);
   const footerText = '2023 portfolio - developed by Tommy Huang';
   const bgGradient = ['1', '2', '3'];
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const touchBox = [
     {
