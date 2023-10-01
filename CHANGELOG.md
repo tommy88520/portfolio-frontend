@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.3](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.2...v1.2.3) (2023-10-01)
+
+
+### Bug Fixes
+
+* hot fix 18n lang ([96db4fe](https://github.com/tommy88520/portfolio-frontend/commit/96db4fe072cfe628b080666f282a7faa3ee089c8))
+
 ### [1.2.2](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.1...v1.2.2) (2023-10-01)
 
 ### [1.2.1](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.0...v1.2.1) (2023-10-01)
