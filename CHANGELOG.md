@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.4](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.3...v1.2.4) (2023-10-01)
+
+
+### Bug Fixes
+
+* hot fix i18n and mobile wrap width ([24edb29](https://github.com/tommy88520/portfolio-frontend/commit/24edb29cabc733598511a0efd6db7d998882b6e4))
+
 ### [1.2.3](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.2...v1.2.3) (2023-10-01)
 
 
