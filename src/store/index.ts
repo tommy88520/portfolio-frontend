@@ -2,7 +2,10 @@ import { create } from 'zustand';
 import { userRequest } from '~/utils/axios';
 import { devtools } from 'zustand/middleware';
 import { iMenu } from './state/navigate';
-import { iSkillsPage, iWorks } from './state/homePage';
+import { iWorkPage } from './state/workPage';
+import { iSkillsPage, iWorks, irootUrl } from './state/homePage';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 // const menuStore = create<iMenu[]>()(
 //   devtools(
 //     persist((set) => ({
@@ -23,7 +26,6 @@ const menuStore = create<iMenu>()(
       await userRequest
         .get('portfolio/get-menu')
         .then((res) => {
-          // console.log(res);
           set(() => ({ menuState: res.data }));
         })
         .catch((error) => {
@@ -37,6 +39,7 @@ const worksStore = create<iWorks>()(
   devtools((set) => ({
     worksContent: [
       {
+        articleId: '',
         title: '',
         content: '',
         tags: [''],
@@ -49,11 +52,15 @@ const worksStore = create<iWorks>()(
       await userRequest
         .post('portfolio/get-work', { lang: lang })
         .then((res) => {
-          console.log(res);
           set(() => ({ worksContent: res.data }));
         })
         .catch((error) => {
           console.log(error);
+          if (error.response.status == 401) {
+            Swal.fire('未登入或是登入時效已到期，請重新登入');
+          } else {
+            location.href = '/notFound';
+          }
         });
     },
   })),
@@ -71,7 +78,6 @@ const skillsStore = create<iSkillsPage>()(
       await userRequest
         .get('portfolio/get-skills')
         .then((res) => {
-          console.log(res.data);
           set(() => ({ skillsState: res.data }));
         })
         .catch((error) => {
@@ -81,4 +87,43 @@ const skillsStore = create<iSkillsPage>()(
   })),
 );
 
-export { menuStore, skillsStore, worksStore };
+const workPageStore = create<iWorkPage>()(
+  devtools((set) => ({
+    workPageContent: {
+      title: '',
+      workDetail: [
+        {
+          title: '',
+          content: '',
+          workDetailImages: [{ image: '' }],
+        },
+      ],
+    },
+    getWorkPageContent: async (e) => {
+      await userRequest
+        .post('portfolio/get-work-page', e)
+        .then((res) => {
+          set(() => ({ workPageContent: res.data }));
+        })
+        .catch((error) => {
+          console.log(error);
+          if (error.response.status == 401) {
+            Swal.fire('未登入或是登入時效已到期，請重新登入');
+          } else {
+            location.href = '/notFound';
+          }
+        });
+    },
+  })),
+);
+
+const rootUrlStore = create<irootUrl>()(
+  devtools((set) => ({
+    rootUrlState: true,
+    toggleRootUrl: (query) => {
+      set(() => ({ rootUrlState: query }));
+    },
+  })),
+);
+
+export { menuStore, skillsStore, worksStore, rootUrlStore, workPageStore };

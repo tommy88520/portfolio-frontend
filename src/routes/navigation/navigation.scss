@@ -30,6 +30,10 @@
       opacity: 1;
     }
   }
+  &__link-margin {
+    width: 80px;
+    text-align: center;
+  }
 
   &__icon {
     width: 40%;
@@ -83,27 +87,12 @@
     text-align: center;
   }
 
-  &__back-button {
-    border-radius: 10px;
-    background: rgba(242, 247, 251, 8%);
-    border: 1px solid rgba(242, 247, 251, 0.4);
-    display: flex;
-    padding: 7px;
-    align-items: center;
-    margin-left: 20px;
-    cursor: pointer;
-  }
-
-  &__left-arrow {
-    width: 20px;
-    height: 20px;
-    stroke: rgba(242, 247, 251, 0.85);
-  }
-
   @media (max-width: 576px) {
-    &__show-container {
+    &__link,
+    &__icon {
       display: none;
     }
+
     &__logo p {
       height: 50px;
       line-height: 50px;

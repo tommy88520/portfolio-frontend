@@ -1,5 +1,5 @@
-import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import Introduce from '~/components/introduce/introduce';
 import './home.scss';
 import Work from '~/components/work/work';
@@ -15,7 +15,6 @@ import EmailIcon from '~/IMG/email.svg';
 import { worksAnimation } from '~/animation/index';
 import { useTranslation } from 'react-i18next';
 import { worksStore } from '~/store/index';
-
 // gsap.registerPlugin(GSDevTools);
 gsap.registerPlugin(TextPlugin);
 const Home = () => {
@@ -68,7 +67,7 @@ const Home = () => {
       worksAnimation(gsap, ref);
       introItems();
     }
-  }, [worksContent[0].title]);
+  }, [worksContent[0].title, i18n.language]);
   function navShrink() {
     if (workContainer) {
       const element = ref.current;
@@ -167,7 +166,6 @@ const Home = () => {
         </div>
         <BackgroundColor bgGradient={bgGradient} />
       </section>
-      <footer className='home-page__footer'>2023 portfolio - developed by Tommy Huang</footer>
       <MobileBar />
     </div>
   );

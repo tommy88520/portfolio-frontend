@@ -5,6 +5,7 @@ export interface iSkillsPage {
 
 export interface iWorks {
   worksContent: {
+    articleId: string;
     title: string;
     content: string;
     tags: string[];
@@ -14,4 +15,9 @@ export interface iWorks {
   }[];
 
   getWorks: (e) => void;
+}
+
+export interface irootUrl {
+  rootUrlState: boolean;
+  toggleRootUrl: (e) => void;
 }
