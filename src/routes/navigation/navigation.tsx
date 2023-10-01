@@ -29,10 +29,10 @@ const Navigation = () => {
   };
 
   const changeLang = () => {
-    if (i18n.language == 'zhTw') {
+    if (i18n.language == 'zh-TW') {
       i18n.changeLanguage('en');
     } else {
-      i18n.changeLanguage('zhTw');
+      i18n.changeLanguage('zh-TW');
     }
     // getWorks(i18n.language);
   };
@@ -69,7 +69,7 @@ const Navigation = () => {
               return (
                 <a
                   className={`navigation-bar__link-detail ${
-                    i18n.language == 'zhTw' && 'navigation-bar__link-margin'
+                    i18n.language == 'zh-TW' && 'navigation-bar__link-margin'
                   }`}
                   key={index}
                   href={`#${res.link}`}
@@ -101,7 +101,7 @@ const Navigation = () => {
               onClick={() => changeLang()}
               aria-hidden='true'
             >
-              {i18n.language !== 'zhTw' ? '中文' : 'En'}
+              {i18n.language !== 'zh-TW' ? '中文' : 'En'}
             </p>
           </div>
           <BackButton rootUrlState={rootUrlState} top={true} />
