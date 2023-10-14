@@ -14,6 +14,7 @@ interface WorkProps {
   };
   number: any;
 }
+
 const Work: React.FC<WorkProps> = ({ order, number }) => {
   const { title, content, tags, workImage, orderNumber, articleId } = order;
   return (

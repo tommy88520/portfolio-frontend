@@ -49,7 +49,6 @@ const MagneticButton: React.FC<MagneticButtonProps> = (prop) => {
   const rootBound = useRef<DOMRect | null>(null);
   const itemBound = useRef<DOMRect | null>(null);
   const diffBound = useRef({ x: 0, y: 0 });
-
   const handleMouseEnter = () => {
     gsap.killTweensOf($item.current);
     gsap.set($hover.current, {
