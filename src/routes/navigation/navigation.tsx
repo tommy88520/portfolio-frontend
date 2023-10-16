@@ -41,12 +41,12 @@ const Navigation = () => {
     {
       title: 'github',
       href: 'https://github.com/tommy88520',
-      icon: LinkIn,
+      icon: Github,
     },
     {
       title: 'linkIn',
       href: 'https://www.linkedin.com/in/tommy8852024/',
-      icon: Github,
+      icon: LinkIn,
     },
     {
       title: 'Instagram',
