@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.6](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.5...v1.2.6) (2023-10-16)
+
 ### [1.2.5](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.4...v1.2.5) (2023-10-16)
 
 
