@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.7](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.6...v1.2.7) (2023-10-16)
+
+
+### Bug Fixes
+
+* fix hide link and id ([20f2f1f](https://github.com/tommy88520/portfolio-frontend/commit/20f2f1fb31314e28d4faf6f77ec07e72401c3a77))
+
 ### [1.2.6](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.5...v1.2.6) (2023-10-16)
 
 ### [1.2.5](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.4...v1.2.5) (2023-10-16)
