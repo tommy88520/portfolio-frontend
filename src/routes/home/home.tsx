@@ -155,7 +155,7 @@ const Home = () => {
           );
         })}
       </section>
-      <section className='home-page__contact-page'>
+      <section className='home-page__contact-page' id='contact'>
         <div className='home-page__touch-text'>
           <p>{t('contact.title')}</p>
           <div className='home-page__contact-icon'>

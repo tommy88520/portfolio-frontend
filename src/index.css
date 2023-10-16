@@ -44,3 +44,7 @@ a {
 ::-webkit-scrollbar-thumb:hover {
   background: #fff;
 }
+
+.hide-link {
+  display: none !important;
+}
