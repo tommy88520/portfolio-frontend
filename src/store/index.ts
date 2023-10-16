@@ -49,6 +49,15 @@ const worksStore = create<iWorks>()(
       },
     ],
     getWorks: async (lang) => {
+      const regexZh = /^zh/;
+
+      const matchZh = lang.match(regexZh);
+      if (matchZh) {
+        lang = 'zh-TW';
+      } else {
+        lang = 'en';
+      }
+
       await userRequest
         .post('portfolio/get-work', { lang: lang })
         .then((res) => {
