@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.2.10](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.9...v1.2.10) (2023-12-18)
+
+
+### Bug Fixes
+
+* fix cicd setting ([91a4815](https://github.com/tommy88520/portfolio-frontend/commit/91a48158034f1de2b44873012bdeadff2b595983))
+
 ### [1.2.9](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.8...v1.2.9) (2023-10-20)
 
 ### [1.2.8](https://github.com/tommy88520/portfolio-frontend/compare/v1.2.7...v1.2.8) (2023-10-16)
